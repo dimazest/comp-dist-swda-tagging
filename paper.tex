@@ -1,0 +1,79 @@
+\documentclass[11pt]{article}
+
+\usepackage{eacl2014}
+\usepackage{times}
+\usepackage{url}
+\usepackage{latexsym}
+\special{papersize=210mm,297mm}
+% \setlength\titlebox{6.5cm}
+
+\title{Simple Compositional Distributional Semantics for Dialogue Act
+  Classification}
+% \author{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+  Abstract goes here...
+\end{abstract}
+
+\section{Introduction}
+
+Reasoning is a fundamental human activity. It is common knowledge that water
+boils at 100 degrees. An example of a typical reasoning would be \textit{If I
+  put a pot of water on a stove and heat it up, the water boils.} Logicians
+developed extremely powerful methods to deal with propositions like
+this. However, the propositions have to be encoded as logical formulas, not
+sentences in English or any other natural language.
+
+Language semantics aims to perform similar reasoning based on information in
+textual form. Distributional semantics is based on the idea that ``You shall
+know a word by the company it keeps'' \cite{firth1957lingtheory}. Consequently,
+The word meaning is represented as a vector where its dimensions correspond to
+the usage contexts, usually other words, and the values are the co-occurrence
+frequencies.  Such meaning representation is easy to build from real data and it
+does not need rich annotation.
+
+Methods based on distributional hypothesis have been applied mostly to
+word-level tasks, for instance, word sense disambiguation
+\cite{zhitomirsky2009bootstrapping} or lexical substitution
+\cite{thater2010}. They exploit the notion of similarity which correlates with
+the angle between word vectors \cite{turney2010frequency}.
+
+Compositional distributional semantics goes beyond word level and models the
+meaning of phrases or sentences based on their parts. \cite{mitchell2008vector}
+perform composition of word vectors using vector addition and multiplication
+operations. The limitation of this approach is the operator associativity, which
+ignores the argument order. As a result, \textit{John loves Mary} and
+\textit{Mary loves John} get assigned the same meaning.
+
+To capture the word order, \cite{grefenstette2011experimental} extend the
+compositional approach by using non-associative linear algebra operators as
+proposed in the theoretical work of \cite{coecke2010}. Alternatively,
+\cite{socher2012semantic} present a recursive technique to build compositional
+meaning of phrases and sentences, where the non-linear composition operators are
+learned by neural networks.
+
+The two methods differ in approaches. \cite{grefenstette2011experimental}
+rigorously study relational words, a linguistic phenomena, and concentrate on
+the accuracy of the method. \cite{socher2012semantic}, on the other hand, aim
+for practicality and high coverage by using a machine--learning technique. The
+first method got high usage by theoretical linguists, while the second is
+applied by computational linguists \cite{steedman2011romantics}.
+
+% TODO: We proceed as follows...
+
+\section*{Acknowledgments}
+
+
+\bibliography{references}
+\bibliographystyle{eacl2014}
+
+\end{document}
+
+
+%%% Local Variables:
+%%% TeX-engine: xetex
+%%% End:
